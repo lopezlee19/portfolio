@@ -1,0 +1,24 @@
+{
+  "entities": {
+    "Project": {
+      "title": "Project",
+      "description": "A portfolio project with an image and details.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "The title of the project." },
+        "category": { "type": "string", "description": "The category of the project (e.g., Architecture, AI)." },
+        "description": { "type": "string", "description": "A brief description of the project." },
+        "image": { "type": "string", "format": "url", "description": "The URL of the project's image." },
+        "year": { "type": "string", "description": "The year the project was completed." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "When the project was created." }
+      },
+      "required": ["title", "image"]
+    }
+  },
+  "firestore": {
+    "/projects": {
+      "schema": "Project",
+      "description": "Collection of portfolio projects."
+    }
+  }
+}
